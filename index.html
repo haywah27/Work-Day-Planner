@@ -5,21 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     
-    
+    <!-- link to bootstrap -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
+    <!-- link to font awesome -->
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
       crossorigin="anonymous"
     />
+    <!-- link to fonts googleapis -->
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
+    <!-- link to css file -->
     <link rel="stylesheet" href="style.css" />
     <title>Work Day Scheduler</title>
   </head>
@@ -29,117 +32,130 @@
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
-   
-      
-      
     </header>
+
     <div class="container">
       <!-- Timeblocks go here -->
       <!-- class attributes derived from original css -->
       <!-- 9AM time block -->
-    <div id="9AM" class="row time-block">
+      <div class="row time-block" id="9">
         <!-- hour title -->
-        <div class="col-md-1 hour">
-          9:00am
+        <div class="col-sm-1 hour">
+          9AM
+        </div>
+        <!-- input area/ used textarea so that user could have multiple lines of text(input box only has only one line)-->
+        <textarea class="col-sm-10 description"></textarea>
+        <!-- button icon class based on fontasesome/ icon nested on button(ie layered) -->
+        <button class="col-sm-1 btn saveBtn"><i class="fas fa-save fa-2x"></i></button>
+      </div>
+
+      <!-- 10AM time block -->
+      <div class="row time-block" id="10">
+        <!-- hour title -->
+        <div class="col-sm-1 hour">
+          10AM
         </div>
         <!-- input area -->
-        <textarea class="col-md-10 description"></textarea>
+        <textarea class="col-sm-10 description"></textarea>
         <!-- button icon class based on fontasesome -->
-        <button class="btn col-md-1 saveBtn"><i class="fas fa-save"></i></button>
-    </div>
-
-
-    <div id="10AM" class="row time-block">
-      <!-- hour title -->
-      <div class="col-md-1 hour">
-        10:00am
+        <button class="col-sm-1 btn saveBtn"><i class="fas fa-save fa-2x"></i></button>
       </div>
-      <!-- input area -->
-      <textarea class="col-md-10 description"></textarea>
-      <!-- button icon class based on fontasesome -->
-      <button class="btn col-md-1 saveBtn"><i class="fas fa-save"></i></button>
-    </div>
 
-    <div id="11AM" class="row time-block">
-      <!-- hour title -->
-      <div class="col-md-1 hour">
-        11:00am
+      <!-- 11AM time block -->
+      <div class="row time-block" id="11">
+        <!-- hour title -->
+        <div class="col-sm-1 hour">
+          11AM
+        </div>
+        <!-- input area -->
+        <textarea class="col-sm-10 description"></textarea>
+        <!-- button icon class based on fontasesome -->
+        <button class="col-sm-1 btn saveBtn"><i class="fas fa-save fa-2x"></i></button>
       </div>
-      <!-- input area -->
-      <textarea class="col-md-10 description"></textarea>
-      <!-- button icon class based on fontasesome -->
-      <button class="btn col-md-1 saveBtn"><i class="fas fa-save"></i></button>
-    </div>
 
-    <div id="12PM" class="row time-block">
-      <!-- hour title -->
-      <div class="col-md-1 hour">
-        12:00pm
+      <!-- 12PM time block -->
+      <div class="row time-block" id="12">
+        <!-- hour title -->
+        <div class="col-sm-1 hour">
+          12PM
+        </div>
+        <!-- input area -->
+        <textarea class="col-sm-10 description"></textarea>
+        <!-- button icon class based on fontasesome -->
+        <button class="col-sm-1 btn saveBtn"><i class="fas fa-save fa-2x"></i></button>
       </div>
-      <!-- input area -->
-      <textarea class="col-md-10 description"></textarea>
-      <!-- button icon class based on fontasesome -->
-      <button class="btn col-md-1 saveBtn"><i class="fas fa-save"></i></button>
-    </div>
 
-    <div id="1PM" class="row time-block">
-      <!-- hour title -->
-      <div class="col-md-1 hour">
-        1:00pm
+      <!-- 1PM time block -->
+      <div class="row time-block" id="13">
+        <!-- hour title -->
+        <div class="col-sm-1 hour">
+          1PM
+        </div>
+        <!-- input area -->
+        <textarea class="col-sm-10 description"></textarea>
+        <!-- button icon class based on fontasesome -->
+        <button class="col-sm-1 btn saveBtn"><i class="fas fa-save fa-2x"></i></button>
       </div>
-      <!-- input area -->
-      <textarea class="col-md-10 description"></textarea>
-      <!-- button icon class based on fontasesome -->
-      <button class="btn col-md-1 saveBtn"><i class="fas fa-save"></i></button>
-    </div>
 
-    <div id="2PM" class="row time-block">
-      <!-- hour title -->
-      <div class="col-md-1 hour">
-        2:00pm
+      <!-- 2PM time block -->
+      <div class="row time-block" id="14">
+        <!-- hour title -->
+        <div class="col-sm-1 hour">
+          2PM
+        </div>
+        <!-- input area -->
+        <textarea class="col-sm-10 description"></textarea>
+        <!-- button icon class based on fontasesome -->
+        <button class="col-sm-1 btn saveBtn"><i class="fas fa-save fa-2x"></i></button>
       </div>
-      <!-- input area -->
-      <textarea class="col-md-10 description"></textarea>
-      <!-- button icon class based on fontasesome -->
-      <button class="btn col-md-1 saveBtn"><i class="fas fa-save"></i></button>
-    </div>
 
-    <div id="3PM" class="row time-block">
-      <!-- hour title -->
-      <div class="col-md-1 hour">
-        3:00pm
+      <!-- 3PM time block -->
+      <div class="row time-block" id="15">
+        <!-- hour title -->
+        <div class="col-sm-1 hour">
+          3PM
+        </div>
+        <!-- input area -->
+        <textarea class="col-sm-10 description"></textarea>
+        <!-- button icon class based on fontasesome -->
+        <button class="col-sm-1 btn saveBtn"><i class="fas fa-save fa-2x"></i></button>
       </div>
-      <!-- input area -->
-      <textarea class="col-md-10 description"></textarea>
-      <!-- button icon class based on fontasesome -->
-      <button class="btn col-md-1 saveBtn"><i class="fas fa-save"></i></button>
-    </div>
 
-    <div id="4PM" class="row time-block">
-      <!-- hour title -->
-      <div class="col-md-1 hour">
-        4:00pm
+      <!-- 4PM time block -->
+      <div class="row time-block" id="16">
+        <!-- hour title -->
+        <div class="col-sm-1 hour">
+          4PM
+        </div>
+        <!-- input area -->
+        <textarea class="col-sm-10 description"></textarea>
+        <!-- button icon class based on fontasesome -->
+        <button class="col-sm-1 btn saveBtn"><i class="fas fa-save fa-2x"></i></button>
       </div>
-      <!-- input area -->
-      <textarea class="col-md-10 description"></textarea>
-      <!-- button icon class based on fontasesome -->
-      <button class="btn col-md-1 saveBtn"><i class="fas fa-save"></i></button>
-    </div>
 
-    <div id="5PM" class="row time-block">
-      <!-- hour title -->
-      <div class="col-md-1 hour">
-        5:00pm
+      <!-- 5PM time block -->
+      <div class="row time-block" id="17">
+        <!-- hour title -->
+        <div class="col-sm-1 hour">
+          5PM
+        </div>
+        <!-- input area -->
+        <textarea class="col-sm-10 description"></textarea>
+        <!-- button icon class based on fontasesome -->
+        <button class="col-sm-1 btn saveBtn"><i class="fas fa-save fa-2x"></i></button>
       </div>
-      <!-- input area -->
-      <textarea class="col-md-10 description"></textarea>
-      <!-- button icon class based on fontasesome -->
-      <button class="btn col-md-1 saveBtn"><i class="fas fa-save"></i></button>
+
+      <!-- a footer to give buffer between bottom page and last -->
+      <footer class="bottomPad"></footer>
+
+    <!-- end of container -->
     </div>
-      
-    </div>
+    
     <script src="moment.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./script.js"></script>
+
+    <!-- in future use this cdn for moment.js -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script> -->
   </body>
 </html>
