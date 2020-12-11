@@ -40,3 +40,26 @@ function hourDisplay() {
     })
 }
 hourDisplay();
+
+
+
+// console log if button clicked
+$(".saveBtn").click(function () {
+    // need row info (hour) *parent
+    // need user info box input *not child?? sibling???
+    // need to save to local storage
+    // console.log(this);
+   
+    var hourSave = $(this).parent().attr("id");
+    // .val is used to return the value of class description
+    var inputSave= $(this).siblings(".description").val();
+    // console.log(parent_id);
+   
+   
+    // console.log(sibling_id);
+    // console.log(hourSave, inputSave);
+    // save a key value pair of hour: input when save button clicked on respective row
+    localStorage.setItem(hourSave, inputSave);
+    // YAAAAAAAASSS!!!!!!!
+ })
+ 
