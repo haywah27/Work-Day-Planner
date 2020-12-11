@@ -13,7 +13,7 @@ displayCurrentDay();
 function hourDisplay() {
     
     console.log(typeof(moment().format('HH')));
-    console.log(typeof(currentHr));
+
 
     // set currentHr to the current military hour via moment.js
     var currentHr = parseInt(moment().format('HH'));
@@ -74,6 +74,15 @@ $(".saveBtn").click(function() {
 
     // save a key value pair of "hour: input" when save button clicked on respective row
     localStorage.setItem(hourSave, inputSave);
+  
+ })
+
+
+ $(".btn-danger").click(function() {
+    console.log(this);
+    localStorage.clear();
+    document.location.reload();
+ 
   
  })
  
