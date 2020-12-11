@@ -1,29 +1,30 @@
-var saveButton = document.querySelector(".saveBtn");
-var dayEl = document.querySelector("#currentDay");
-// day of the week, month, day
-var date = moment().format("dddd, MMMM Do");
-
-// display current date in header
+// display the current date in header
 function displayCurrentDay(){
-    // dayEl.innerHTML = date;
-    $(dayEl).text(date);
-}
+    // day of the week, month, day
+    var date = moment().format("dddd, MMMM Do");
 
+    // set the text in currentDay id to moment.js date
+    $("#currentDay").text(date);
+}
 displayCurrentDay();
 
 
 // set color of textbox based on hour
 function hourDisplay() {
-    // get current hour through moment.js
-    var currentHr = moment().hour();
+    
+    console.log(typeof(moment().format('HH')));
+    console.log(typeof(currentHr));
 
+    // set currentHr to the current military hour via moment.js
+    var currentHr = parseInt(moment().format('HH'));
+    // console.log(typeof(moment().format('HH')))
+   
     // for each row associated with class timeBlock, do these things:
-    $(".time-block").each(function () {
+    $(".time-block").each(function() {
         // get id name and turn it into a readable number
         var hourRow = parseInt($(this).attr("id"));
         
-        // console.log(this)
-        // turn grey if current hour is greater than the hour row (we have moved past that hour block)
+        // turn grey if current hour is greater than the hour row
         if (currentHr > hourRow) {
             $(this).addClass("past");
         }
@@ -33,7 +34,7 @@ function hourDisplay() {
             $(this).addClass("present");
         }
 
-        // turn green if the current hour has not occured
+        // turn green if the current hour has not occur3red
         else {
             $(this).addClass("future");
         }
@@ -42,24 +43,37 @@ function hourDisplay() {
 hourDisplay();
 
 
+function displayLocalStorage() {
+    // for each row associated with class timeBlock, do these things:
+    $(".time-block").each(function () {
+        // get id name (string) and turn it into a number
+        var localSavedRow = parseInt($(this).attr("id"));
+        // console.log(localRow);
 
-// console log if button clicked
-$(".saveBtn").click(function () {
-    // need row info (hour) *parent
-    // need user info box input *not child?? sibling???
-    // need to save to local storage
+        // get the .description class(text box) of the hour id from local storage via when user saved and display it 
+        var localDisplay = $("#" + JSON.stringify(localSavedRow) + " .description").val(localStorage.getItem(localSavedRow));
+        // console.log(localDisplay);
+
+        return(localDisplay);
+    })
+ }
+ displayLocalStorage();
+
+
+
+// do these things when save button clicked:
+$(".saveBtn").click(function() {
     // console.log(this);
    
     var hourSave = $(this).parent().attr("id");
-    // .val is used to return the value of class description
+    // console.log(hourSave);
+
+    // .siblings will return the value within description class (what the user wrote in textarea) 
     var inputSave= $(this).siblings(".description").val();
-    // console.log(parent_id);
-   
-   
-    // console.log(sibling_id);
-    // console.log(hourSave, inputSave);
-    // save a key value pair of hour: input when save button clicked on respective row
+    // console.log(inputSave);
+
+    // save a key value pair of "hour: input" when save button clicked on respective row
     localStorage.setItem(hourSave, inputSave);
-    // YAAAAAAAASSS!!!!!!!
+  
  })
  
