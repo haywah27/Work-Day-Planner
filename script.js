@@ -13,7 +13,7 @@ function displayCurrentTime(){
     // set the currentTime id text to moment.js hour:minute:second
     $('#currentTime').html(moment().format('hh:mm:ss'));
 }
-//  run funciton every second
+// run funciton every second
 setInterval(displayCurrentTime, 1000);
 
 
@@ -85,7 +85,7 @@ $(".saveBtn").click(function() {
   
  })
 
-
+// clear local storage and refresh page if this button clicked
  $(".btn-danger").click(function() {
     console.log(this);
     localStorage.clear();
