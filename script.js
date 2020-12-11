@@ -8,6 +8,14 @@ function displayCurrentDay(){
 }
 displayCurrentDay();
 
+// display a real time clock
+function displayCurrentTime(){
+    // set the currentTime id text to moment.js hour:minute:second
+    $('#currentTime').html(moment().format('hh:mm:ss'));
+}
+//  run funciton every second
+setInterval(displayCurrentTime, 1000);
+
 
 // set color of textbox based on hour
 function hourDisplay() {
